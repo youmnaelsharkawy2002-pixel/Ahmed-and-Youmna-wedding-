@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f6f0e5"><title>Ahmed & Youmna — Wedding Invitation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#faf4e8;--ink:#633f32;--gold:#ad8247;--sage:#727b4b;--butter:#f0d978;--burgundy:#762d43;--olive:#727b4b;--babyblue:#b9d8e8}
+*{box-sizing:border-box}body{margin:0;color:var(--ink);font-family:"Cormorant Garamond",Georgia,serif;background:radial-gradient(ellipse at top,#fffdf7 0,var(--paper) 58%,#e9e0ce 100%)}
+.hidden{display:none!important}.screen{min-height:100svh;display:flex;align-items:center;justify-content:center;padding:20px}
+.envelope-screen{text-align:center;flex-direction:column;gap:14px}
+.kicker{letter-spacing:.22em;text-transform:uppercase;font-size:14px}
+.envelope-button{border:0;background:transparent;cursor:pointer;padding:10px;max-width:340px;width:90%;color:inherit}
+.envelope{height:210px;position:relative;background:#e9d7b9;border:1px solid #b99460;box-shadow:0 12px 30px #6d4b2220;overflow:hidden}
+.envelope:before{content:"";position:absolute;inset:0;background:linear-gradient(140deg,transparent 49.5%,#d7bd92 50%,transparent 50.7%),linear-gradient(220deg,transparent 49.5%,#d7bd92 50%,transparent 50.7%)}
+.flap{position:absolute;inset:0 0 auto;height:60%;background:#f3e5ce;clip-path:polygon(0 0,100% 0,50% 100%);border-bottom:1px solid #b99460;transform-origin:top;transition:transform .8s ease;z-index:2}
+.seal{position:absolute;z-index:3;left:50%;top:51%;transform:translate(-50%,-50%);width:52px;height:52px;border-radius:50%;background:#a77a3d;color:#fff6e8;display:grid;place-items:center;font-size:23px;box-shadow:0 2px 8px #6d4b2230}
+.envelope.open .flap{transform:rotateX(180deg)}
+.tap{font-size:18px;margin:4px 0}.script{font-family:"Great Vibes",cursive;font-size:43px;margin:0}
+.page{width:min(760px,100%);padding:18px 14px 28px}
+.card{position:relative;overflow:hidden;text-align:center;border:1px solid #b99460;outline:1px solid #d6c09c;outline-offset:-7px;padding:34px 20px 28px;min-height:94vh;background:linear-gradient(145deg,#ffffff8c,#f7f1e6d1);box-shadow:0 12px 38px #55391817}
+.floral{position:absolute;font-size:clamp(40px,9vw,76px);opacity:.7;line-height:1;pointer-events:none;text-shadow:0 1px 0 #fff7}.tl{top:13px;left:10px;color:var(--burgundy)}.tr{top:13px;right:10px;transform:scaleX(-1);color:var(--babyblue)}.bl{bottom:10px;left:10px;transform:rotate(180deg);color:var(--olive)}.br{bottom:10px;right:10px;transform:rotate(180deg) scaleX(-1);color:var(--butter)}
+.welcome{max-width:480px;margin:4px auto 20px;font-size:clamp(18px,4.5vw,23px);line-height:1.35;font-style:italic;color:var(--burgundy)}.eyebrow{letter-spacing:.25em;text-transform:uppercase;font-size:clamp(13px,2.7vw,18px);line-height:1.7;margin:12px 0 5px}.palette-blooms{display:flex;justify-content:center;gap:13px;font-size:24px;margin:10px auto 4px}.palette-blooms span:nth-child(1){color:var(--butter)}.palette-blooms span:nth-child(2){color:var(--burgundy)}.palette-blooms span:nth-child(3){color:var(--olive)}.palette-blooms span:nth-child(4){color:var(--babyblue)}
+.rule{width:150px;max-width:60%;height:1px;background:linear-gradient(90deg,var(--babyblue),var(--gold),var(--burgundy));margin:15px auto;position:relative}.rule:after{content:"✿";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:var(--paper);padding:0 10px;color:var(--burgundy);font-size:18px}
+.photo-wrap{width:min(510px,94%);margin:22px auto 14px;position:relative}.photo-wrap:before{content:"";position:absolute;inset:-7px;border:1px solid #c6a46e;border-radius:48% 48% 44% 44% / 30% 30% 35% 35%}
+.photo{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center;border-radius:48% 48% 44% 44% / 30% 30% 35% 35%}
+.names{font-family:"Great Vibes",cursive;font-size:clamp(47px,11vw,82px);line-height:1.15;margin:20px 0 0;font-weight:400}
+.date{font-size:clamp(25px,6vw,37px);letter-spacing:.18em;margin:20px 0 3px}.time{font-size:21px;letter-spacing:.18em;margin:7px 0 24px;text-transform:uppercase}
+.venue{font-size:clamp(25px,5vw,32px);margin:0}.address{font-size:20px;letter-spacing:.08em;margin:4px 0 14px}
+.dress-code{width:min(420px,90%);margin:24px auto 20px;padding:14px 12px;border-top:1px solid #c9b28a;border-bottom:1px solid #c9b28a;background:linear-gradient(90deg,#b9d8e81a,#f0d97820,#762d4310)}
+.dress-icon{font-size:23px;color:var(--burgundy);line-height:1}.dress-title{font-size:20px;letter-spacing:.2em;text-transform:uppercase;margin:4px 0 7px;color:var(--olive)}
+.dress-copy{font-size:18px;line-height:1.45;margin:0;color:var(--ink)}
+.note{font-size:17px;font-style:italic;margin:25px 0 0}
+#countdown{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin:14px 0 0}.timebox{min-width:62px;padding:7px 8px;border:1px solid #d4bd96;background:#fff9ef99}.timebox strong{display:block;font-size:25px;font-weight:500}.timebox span{display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+.actions{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin:20px auto 0}button,.map-link{border:1px solid var(--gold);border-radius:30px;background:#ffffff80;color:var(--ink);padding:10px 17px;font:600 16px "Cormorant Garamond",Georgia,serif;text-decoration:none;cursor:pointer}
+footer{margin-top:22px;font-size:13px;opacity:.75}.music-note{font-size:14px;margin-top:12px;opacity:.8}
+@media(min-width:600px){.card{padding:40px 42px 34px}}
+</style></head>
+<body>
+<section id="cover" class="screen envelope-screen">
+  <p class="kicker">A special invitation for you</p>
+  <p class="script">Ahmed &amp; Youmna</p>
+  <button id="openBtn" class="envelope-button" aria-label="Open wedding invitation">
+    <div id="envelope" class="envelope"><div class="flap"></div><div class="seal">♥</div></div>
+  </button>
+  <p class="tap">Tap the envelope to open</p>
+  <p class="kicker">20 November 2026 · 7 PM</p>
+</section>
+<main id="invitation" class="page hidden">
+ <section class="card">
+  <div class="floral tl">❀</div><div class="floral tr">❀</div><div class="floral bl">❀</div><div class="floral br">❀</div>
+  <p class="welcome">Together with our families, we warmly invite you to share in our joy and celebrate the beginning of our forever.</p><p class="eyebrow">You are invited<br>to the wedding of</p><div class="palette-blooms" aria-hidden="true"><span>✿</span><span>❀</span><span>✿</span><span>❀</span></div><div class="rule"></div>
+  <div class="photo-wrap"><img class="photo" src="assets/couple-photo.png" alt="Ahmed and Youmna holding hands"></div>
+  <h1 class="names">Ahmed &amp; Youmna</h1><div class="rule"></div>
+  <p class="date">Friday, 20 November 2026</p><p class="time">At 7:00 PM</p>
+  <div class="palette-blooms" aria-hidden="true"><span>❀</span><span>✿</span><span>❀</span></div><p class="dress-title">Venue</p><p class="venue">Diva Al abd</p><p class="address">Alexandria agriculture road</p>
+  <div class="dress-code">
+    <div class="dress-icon" aria-hidden="true">✧</div>
+    <p class="dress-title">Dress Code</p>
+    <p class="dress-copy">We kindly request that our guests dress in<br>formal or semi-formal attire.</p>
+  </div>
+  <div class="rule"></div><section class="dress-code"><p class="dress-title">Dress Code</p><p class="dress-copy">We kindly request that our guests dress in formal or semi-formal attire.</p></section><p class="note">We can’t wait to celebrate with you</p>
+  <div id="countdown"><div class="timebox"><strong id="days">—</strong><span>Days</span></div><div class="timebox"><strong id="hours">—</strong><span>Hours</span></div><div class="timebox"><strong id="minutes">—</strong><span>Minutes</span></div><div class="timebox"><strong id="seconds">—</strong><span>Seconds</span></div></div>
+  <div class="actions"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Diva+Al+abd+Alexandria+agriculture+road" target="_blank" rel="noopener">Find us on Google Maps ↗</a><button id="shareBtn" type="button">Share invitation ↗</button><button id="musicBtn" type="button">♫ Music: add your song</button></div>
+  <p class="music-note">To add your chosen song, place a licensed MP3 named <b>wedding-song.mp3</b> in the assets folder.</p><audio id="music" src="assets/wedding-song.mp3" loop></audio>
+  <footer>With love, Ahmed &amp; Youmna</footer>
+ </section>
+</main>
+<script>
+const cover=document.getElementById("cover"), invitation=document.getElementById("invitation"), envelope=document.getElementById("envelope");
+document.getElementById("openBtn").addEventListener("click",()=>{envelope.classList.add("open");setTimeout(()=>{cover.classList.add("hidden");invitation.classList.remove("hidden");window.scrollTo(0,0)},650)});
+const weddingDate=new Date("2026-11-20T19:00:00+02:00").getTime();
+function updateCountdown(){let diff=Math.max(0,weddingDate-Date.now());const d=Math.floor(diff/86400000);diff%=86400000;const h=Math.floor(diff/3600000);diff%=3600000;const m=Math.floor(diff/60000);const s=Math.floor((diff%60000)/1000);document.getElementById("days").textContent=d;document.getElementById("hours").textContent=h;document.getElementById("minutes").textContent=m;document.getElementById("seconds").textContent=s}
+updateCountdown();setInterval(updateCountdown,1000);
+document.getElementById("shareBtn").addEventListener("click",async()=>{const data={title:"Ahmed & Youmna — Wedding Invitation",text:"You're invited to Ahmed & Youmna's wedding on 20 November 2026 at 7 PM!",url:location.href};if(navigator.share){try{await navigator.share(data)}catch(e){}}else{try{await navigator.clipboard.writeText(location.href);alert("Invitation link copied!")}catch(e){alert("Copy the website link from your browser to share it.")}}});
+const music=document.getElementById("music"), musicBtn=document.getElementById("musicBtn");musicBtn.addEventListener("click",async()=>{if(music.paused){try{await music.play();musicBtn.textContent="♫ Pause music"}catch(e){alert("Add your MP3 file as assets/wedding-song.mp3 first.")}}else{music.pause();musicBtn.textContent="♫ Play music"}});
+</script></body></html>
